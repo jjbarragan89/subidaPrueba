@@ -1,0 +1,24 @@
+Options +FollowSymLinks
+RewriteEngine on
+#RewriteBase /deeploy_pernod/admin/organizado/
+RewriteBase /
+
+# Rescritura public
+RewriteRule ^theme/js/(.*) core/theme/public/js/$1 [L,NC,QSA]
+RewriteRule ^theme/css/(.*) core/theme/public/css/$1 [L,NC,QSA]
+RewriteRule ^theme/images/(.*) core/theme/public/images/$1 [L,NC,QSA]
+RewriteRule ^theme/fonts/(.*) core/theme/public/fonts/$1 [L,NC,QSA]
+
+RewriteRule ^modules/(.*) core/modules/$1 [L,NC,QSA]
+#RewriteRule ^modules/(.*) core/modules/$1 [L,NC,QSA]
+
+#excluir la ruta del front de los sitios
+RewriteRule ^(app|user)($|/) - [L]
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*) index.php?url=$1 [L,QSA]
+RewriteCond %{REQUEST_URI} !public/ [NC]
+RewriteCond %{REQUEST_URI} !modules/ [NC]
+RewriteRule ^ core/index.php?url=/ [L,NC,QSA]
