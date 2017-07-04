@@ -1,7 +1,7 @@
 <?php
 
-	if(isset($_REQUEST['nomca'])){
-		$nombreca =$_REQUEST['nomca'];
+	if(isset($_POST['nomca'])){
+		$nombreca =$_POST['nomca'];
 		recibenombre($nombreca);
 	}
 

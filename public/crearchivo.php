@@ -6,10 +6,10 @@
 	//$_FILES["fileToUpload"]["tmp_name"];
 
 
-	if(isset($_FILES['miarchivo']['name']) && $_REQUEST['ruta']){
+	if(isset($_FILES['miarchivo']['name']) && $_POST['ruta']){
 
 		$imgOriginal=$_FILES['miarchivo']['name'];
-		$rutaf = $_REQUEST['ruta'];
+		$rutaf = $_POST['ruta'];
 
 		if($imgOriginal){
 
