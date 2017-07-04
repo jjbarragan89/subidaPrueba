@@ -1,11 +1,7 @@
 <?php
-	var_dump($_REQUEST['nomca']);
-	
-	$nombreca = $_REQUEST['nomca'];
 
-
-
-	if($nombreca){
+	if(isset($_REQUEST['nomca'])){
+		$nombreca =$_REQUEST['nomca'];
 		recibenombre($nombreca);
 	}
 
